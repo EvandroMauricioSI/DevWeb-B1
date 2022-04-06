@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Alo!</title>
+<script type="text/javascript">
+function validaCampoTexto(id) {
+	var valor = document.getElementById("nome").value;
+//testa se o valor é nulo, vazio ou formado por apenas espaços em branco
+if ( (valor == null) || (valor == "") || (/^\s+$/.test(valor)) ) {
+	return false;
+}
+return true;
+}
+
+function validaCampoTextoTamanho(id, minimo, maximo) {
+	var valor = document.getElementById(id).value;
+	if (!validaCampoTexto(id)) {
+	        alert("erro");
+			return false;
+	} 
+
+	if ( (valor.length < minimo) || (valor.length > maximo)) {
+			alert("olha o tamanho");
+			return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body >
+<form name="frm" action="…." 
+      method=“post" onsubmit = "return validaCampoTextoTamanho('nome', 3, 6)">
+	 Nome: <input type="text" name=“nome" id = "nome" />
+	 <input type="submit" name="btnEnviar" value="Enviar"/>
+</form>
+
+
+
+</body>
+</html>

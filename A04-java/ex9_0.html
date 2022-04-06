@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Valida</title>
+<script type="text/javascript">
+	function validarInteiro(valor){ 
+     valor = parseInt(valor) 
+      if (isNaN(valor)) { 
+            return "" 
+      }else{ 
+         return valor 
+      } 
+} 
+	
+function valida_enviar(){
+
+    //valido o nome
+    if (document.fvalida.nome.value.length==0){
+       alert("Tem que escrever seu nome")
+       document.fvalida.nome.focus()
+       return 0;
+    }
+    //valido a idade. Tem que ser inteiro maior que 18
+    if (document.fvalida.idade.value.length==0){
+	   alert("Tem que introduzir um numero inteiro em sua idade.")
+	   document.fvalida.idade.focus()
+       return 0
+    }
+	
+	idade = document.fvalida.idade.value
+	idade = validarInteiro(idade)
+       if (idade < 18){
+          alert("Deve ser maior de 18 anos.")
+          document.fvalida.idade.focus()
+          return 0;
+      
+    }
+
+    //valido o interesse
+    if (document.fvalida.interesse.selectedIndex==0){
+       alert("Deve selecionar um motivo de seu contato.")
+       document.fvalida.interesse.focus()
+       return 0;
+    }
+
+    //o formulário se envia
+    alert("Muito obrigado por enviar o formulario");
+    document.fvalida.submit();
+}
+</script>
+</head>
+<form name="fvalida" action="...">
+<table>
+<tr>
+    <td>Nome*: </td>
+    <td><input type="text" name="nome" id="nome" required size="30" maxlength="100"></td>
+</tr>
+<tr>
+    <td>Idade*: (maior que 18)</td>
+    <td><input type="text" name="idade" id ="idade" required size="3" maxlength="2"></td>
+</tr>
+<tr>
+    <td>Interesse*:</td>
+    <td>
+    <select required name="interesse" id="interesse" >
+	<option selected value="">Escolha um Motivo</option>
+    <option value="Comercial">Contato comercial </option>
+    <option value="Clientes">Atencao ao cliente </option>
+    <option value="Provedores">Contacto de provedores </option>
+    </select>
+    </td>
+</tr>
+</table>
+<input type="button" value="Enviar"
+ onclick="valida_enviar()">
+</form>
+</body>
+</html>

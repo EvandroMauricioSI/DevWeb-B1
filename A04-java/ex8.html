@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Alo!</title>
+<script type="text/javascript">
+function saudacao(nome) {
+	alert("Oi, " + nome);
+}
+</script>
+</head>
+<body>
+	corpo do html<br><br>
+<form>
+    Nome<br>
+	<input type="text" name="txtNome" id = "txtNome"/><br><br>
+	<input type="button" name="btn_saudacao" 
+	value = "Chamar funcao" 
+	onclick = "saudacao(document.getElementById('txtNome').value);"/>
+</form>
+</body>
+</html>

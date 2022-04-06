@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Alo!</title>
+<script type="text/javascript">
+function validaCampo() {
+	var valor = document.getElementById("nome").value;
+
+	if ((valor == null) || (valor == "")) {
+			alert("Preencha o campo Nome");
+			return  false;
+	}
+	return true;
+}
+
+
+
+</script>
+</head>
+<body >
+<form name="frm" action="…." 
+      method=“post" onsubmit = "return validaCampo()">
+	 Nome: <input type="text" name=“nome" id = "nome" />
+	 <input type="submit" name="btnEnviar" value="Enviar"/>
+</form>
+
+
+
+</body>
+</html>

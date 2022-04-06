@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Alo!</title>
+<script type="text/javascript">
+function validaCampoTexto() {
+	var valor = document.getElementById("nome").value;
+//testa se o valor é nulo, vazio ou formado por apenas espaços em branco
+if ( (valor == null) || (valor == "") || (/^\s+$/.test(valor)) ) {
+	alert("erro!");
+	return false;
+}
+return true;
+}
+</script>
+</head>
+<body >
+<form name="frm" action="…." 
+      method=“post" onsubmit = "return validaCampoTexto()">
+	 Nome: <input type="text" name=“nome" id = "nome" />
+	 <input type="submit" name="btnEnviar" value="Enviar"/>
+</form>
+
+
+
+</body>
+</html>

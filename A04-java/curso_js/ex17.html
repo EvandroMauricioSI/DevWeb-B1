@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Valida</title>
+<script type="text/javascript">
+function validaCamposRadio(nome) {
+	var opcoes = document.getElementsByName(nome);
+	var selecionado = false;
+	for(var i = 0; i < opcoes.length; i++) {
+			if(opcoes[i].checked) {
+			    alert(opcoes[i].value);
+    			selecionado = true;
+				break;
+			}
+	}
+	if(!selecionado) {
+	    alert("Selecione um tipo");
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<form>
+Tipo de material: <br>
+  <input type="radio" name="tipo" value="1"> Tipo 1<br>
+  <input type="radio" name="tipo" value="2"> Tipo 2<br>
+  <input type="radio" name="tipo" value="3"> Tipo 3<br>
+  <input type="button" value="Enviar" onclick="return validaCamposRadio('tipo')">
+</form>
+</body>
+</html>

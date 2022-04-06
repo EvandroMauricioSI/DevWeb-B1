@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Valida</title>
+<script type="text/javascript">
+function validarInteiro(){ 
+  var valor = parseInt(document.getElementById('idade').value);
+	if (isNaN(valor) ) {
+	    alert("entre com um numero");
+	    return false;
+	}
+	 alert("sim");
+	    return true;
+}
+
+</script>
+</head>
+<form name="fvalida" action="">
+Idade: 
+<input type="text" name="idade" id ="idade" size="3" maxlength="2"></td>
+<input type="submit" value="Enviar" onclick="return validarInteiro()">
+</form>
+</body>
+</html>

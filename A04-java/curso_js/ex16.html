@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Valida</title>
+<script type="text/javascript">
+function validaCampoCheckbox() {
+	var check = document.getElementsByName("sexo");
+	for (var i=0; i<check.length; i++){ 
+		if (check[i].checked == true){
+          alert(check[i].value);
+		  return true;
+		} 
+	}
+	alert("Faca a escolha");
+    return false;
+}
+
+</script>
+</head>
+<form name="fvalida">
+Sexo: <br>
+  <input type="checkbox" name="sexo" id="sexo" value="F">Feminino<br>
+  <input type="checkbox" name="sexo" id="sexo" value="M" checked>Masculino<br>
+  <input type="button" value="Enviar" onclick="return validaCampoCheckbox()">
+</form>
+</body>
+</html>

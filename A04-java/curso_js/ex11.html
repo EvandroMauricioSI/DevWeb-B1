@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Alo!</title>
+<script type="text/javascript">
+function mouseSobre() {
+	var divResultado = document.getElementById("resultado");
+	divResultado.innerHTML = divResultado.innerHTML +"mouse sobre.<br/>";
+}
+
+function mouseFora() {
+	 var divResultado = document.getElementById("resultado");
+	divResultado.innerHTML = divResultado.innerHTML + "mouse fora.<br/>";
+}
+
+
+
+</script>
+</head>
+<body >
+	corpo do html
+	
+	<a href = "#" onmouseover = "mouseSobre();" onmouseout = "mouseFora();">
+	Passe o mouse
+	</a>	
+<div id = "resultado"> </div>
+
+
+</body>
+</html>

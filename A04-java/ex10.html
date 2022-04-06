@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <style>
+
+     /* The message box is shown when the user clicks on the password field */
+    #message {
+
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    #message p {
+        padding: 10px 35px;
+    }
+
+    /* Add a green text color and a checkmark when the requirements are right */
+    .valid {
+        color: green;
+    }
+
+    .valid:before {
+        position: relative;
+        left: -35px;
+    }
+
+    .invalid {
+        color: red;
+    }
+
+    .invalid:before {
+        position: relative;
+        left: -35px;
+    }
+    </style>
+</head>
+
+<body>
+<table>
+<tr>
+  <td>Senha*: </td>
+  <td>
+	<input type="password" 
+	pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+	name="senha" id="senha"
+	placeholder="Senha">
+  </td>
+</tr>
+</table>
+<input type="button" value="Enviar"
+ onclick="valida_enviar()">
+
+    <div id="message">
+     <h2>Especificação da Senha </h2>
+     <p id="letter" class="invalid">A senha deve possuir letra(s) <strong>minúscula(s)</strong></p>
+     <p id="capital" class="invalid">A senha deve possuir letras(s) <strong>maiúscula(s)</strong></p>
+     <p id="number" class="invalid">A senha deve possuir <strong>números(s)</strong></p>
+     <p id="length" class="invalid">No mínimo <strong>8 caracteres</strong></p>
+    </div>
+
+    <script>
+    var myInput = document.getElementById("senha");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+        }
+
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+        }
+
+        // Validate length
+        if (myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+    }
+    </script>
+
+</body>
+
+</html>
